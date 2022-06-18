@@ -1,8 +1,8 @@
 
 <div class="container px-5 px-sm-0">
- 
+
   <div class="row">
-    <%=render 'list',book: @book_new %>
+    <%=render 'list',book: @book_new,user: @user %>
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <table class="table">
@@ -10,8 +10,8 @@
           <tr>
             <td>
               <%=link_to user_path(@book.user.id) do %>
-                <% if @book.user.image.attached? %>
-                  <%= image_tag @book.user.image, size: "80x80" %>
+                <% if @book.user.profile_image.attached? %>
+                  <%= image_tag @book.user.profile_image, size: "80x80" %>
                 <% else %>
                   <%= image_tag 'no_image', size: "80x80" %>
                 <% end %><br>
